@@ -44,14 +44,14 @@ namespace TI3_WPF
         {
 			if (!(int.TryParse(QField.Text, out q) && int.TryParse(PField.Text, out p)))
 			{
-				MessageBox.Show("Введите простые числа в поля для ключей");
+				MessageBox.Show("Введите простые числа в поля для ключей", "Проверка подписи", MessageBoxButton.OK, MessageBoxImage.Warning);
 				q = 0; p = 0;
 				return false;
 			}
 
 			if (!(IsNumberPrime(q) && IsNumberPrime(p)))
 			{
-				MessageBox.Show("Ключи должны быть простыми числами");
+				MessageBox.Show("Ключи должны быть простыми числами", "Проверка подписи", MessageBoxButton.OK, MessageBoxImage.Warning);
 				return false;
 			}
 
@@ -86,7 +86,7 @@ namespace TI3_WPF
 			int sign;
 			if (!int.TryParse(SignField.Text, out sign))
             {
-				MessageBox.Show("Подписать должна быть числом");
+				MessageBox.Show("Подписать должна быть числом", "Проверка подписи", MessageBoxButton.OK, MessageBoxImage.Warning);
 				return;
             }
 
